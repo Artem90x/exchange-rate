@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script th:src="@{/js/script.js}"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Exchange rate service</title>
+</head>
+<body>
+<div class="container">
+    <div class="container2">
+    <H1>Тестовый проект</H1>
+    <p>Данный проект обращается к сервису курсов валют и отображает GIF по отношению к USD</p>
+    <p>
+        <select id="currency">
+            <option value="">Выбрать валюту</option>
+            <th:block th:each="currency : ${currencies}">
+                <option th:value="${currency.code}" th:text="${currency}"></option>
+            </th:block>
+        </select>
+    </p>
+        <iframe id="gif" src="" width="900" height="450" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+</div>
+</body>
+</html>
